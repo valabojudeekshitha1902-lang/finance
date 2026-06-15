@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BankOps AI Login</title>
+
+<style>
+
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Segoe UI;
+    background:#07111f;
+}
+
+.login-card{
+
+    width:400px;
+    padding:30px;
+
+    background:#101b2d;
+
+    border-radius:20px;
+
+    box-shadow:0 0 20px rgba(0,0,0,.4);
+
+}
+
+h1{
+    color:white;
+    text-align:center;
+}
+
+input{
+
+    width:100%;
+    padding:12px;
+
+    margin-top:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    box-sizing:border-box;
+}
+
+button{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-top:20px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#60a5fa;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:16px;
+}
+
+#error{
+    color:red;
+    margin-top:10px;
+    text-align:center;
+}
+
+.auth-link{
+    color:#9eb0ca;
+    text-align:center;
+    margin-top:16px;
+    font-size:14px;
+}
+
+.auth-link a{
+    color:#60a5fa;
+    text-decoration:none;
+    font-weight:700;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-card">
+
+    <h1>BankOps AI</h1>
+
+    <form id="loginForm">
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Email"
+            required
+        >
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+        >
+
+        <button type="submit">
+            Login
+        </button>
+
+    </form>
+
+    <div id="error"></div>
+
+    <div class="auth-link">
+        New user? <a href="register.html">Create account</a>
+    </div>
+
+</div>
+
+<script src="js/login.js"></script>
+
+</body>
+</html>
