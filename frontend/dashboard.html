@@ -135,8 +135,41 @@ if(!token){
       <div class="slideshow"><div class="slide-head"><h3>Executive Intelligence Slide Show</h3><div class="slide-indicators"><i class="indicator active"></i><i class="indicator"></i><i class="indicator"></i></div></div><div class="slide active"><h4>Strategic Position</h4><p>Net Interest Margin is 3.42% and deposit growth is 8.7%, giving the bank room to grow secured lending while controlling unsecured portfolio risk.</p></div><div class="slide"><h4>Risk Priority</h4><p>Gross NPA is 2.18% and card-not-present fraud exposure is ₹42.6L, making unsecured credit and fraud controls the top executive focus areas.</p></div><div class="slide"><h4>Customer Direction</h4><p>Digital adoption is 72.4%, creating opportunity for lower-cost servicing, AI-based cross-sell, and proactive retention campaigns.</p></div></div>
       <div class="kpis"><div class="card green"><div class="label">Net Interest Margin</div><div class="value">3.42%</div><div class="meta">Green: above internal target of 3.30%.</div></div><div class="card yellow"><div class="label">Gross NPA Ratio</div><div class="value">2.18%</div><div class="meta">Yellow: unsecured loans showing early stress.</div></div><div class="card amber"><div class="label">Fraud Loss Exposure</div><div class="value">₹42.6L</div><div class="meta">Amber: card-not-present disputes increasing.</div></div><div class="card green"><div class="label">Liquidity Coverage Ratio</div><div class="value">126%</div><div class="meta">Green: above operating threshold of 115%.</div></div></div>
       <div class="grid2"><div class="panel"><div class="panel-title"><h3>CEO Alerts</h3><p>Risk classified</p></div><div class="list"><div class="item"><div class="item-top"><b class="item-title">Unsecured Loan Stress</b><span class="badge yellow-b">Yellow</span></div><p>Gross NPA is 2.18%, with unsecured personal loans contributing 31% of fresh slippages.</p></div><div class="item"><div class="item-top"><b class="item-title">Fraud Dispute Spike</b><span class="badge amber-b">Amber</span></div><p>Fraud exposure is ₹42.6L due to increased card-not-present disputes.</p></div><div class="item"><div class="item-top"><b class="item-title">Liquidity Stable</b><span class="badge green-b">Green</span></div><p>LCR is 126%, keeping the liquidity buffer above the operating threshold.</p></div></div></div><div class="panel"><div class="panel-title"><h3>AI Insights</h3><p>Linked to KPI values</p></div><div class="list"><div class="item"><div class="item-top"><b class="item-title">Profitable Growth Window</b><span class="badge green-b">Green</span></div><p>NIM of 3.42% supports controlled growth in secured retail assets.</p></div><div class="item"><div class="item-top"><b class="item-title">Credit Policy Review Needed</b><span class="badge yellow-b">Yellow</span></div><p>Gross NPA of 2.18% and unsecured slippages indicate tighter acquisition policy is needed.</p></div><div class="item"><div class="item-top"><b class="item-title">Fraud Investment Priority</b><span class="badge amber-b">Amber</span></div><p>₹42.6L fraud exposure supports investment in stronger card-not-present anomaly detection.</p></div></div></div></div>
-      <div class="table-wrap"><table><thead><tr><th>Business Segment</th><th>Revenue</th><th>Portfolio Size</th><th>Risk Score</th><th>Risk Indicator</th><th>Fraud Exposure</th><th>Management Signal</th><th>Owner</th></tr></thead><tbody><tr><td>Retail Banking</td><td>₹184.2 Cr</td><td>₹5,420 Cr</td><td><span class="score">28</span></td><td><span class="badge green-b">Green</span></td><td>₹6.8L</td><td>Stable deposit-led growth</td><td>Head of Retail</td></tr><tr><td>Credit Cards</td><td>₹72.4 Cr</td><td>₹1,240 Cr receivables</td><td><span class="score">72</span></td><td><span class="badge amber-b">Amber</span></td><td>₹28.4L</td><td>Fraud dispute rate needs action</td><td>Cards Business Head</td></tr><tr><td>Digital Lending</td><td>₹41.7 Cr</td><td>₹860 Cr</td><td><span class="score">58</span></td><td><span class="badge yellow-b">Yellow</span></td><td>₹7.4L</td><td>Early delinquency increasing</td><td>FinTech Lending Lead</td></tr></tbody></table></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Business Segment</th>
+              <th>Revenue</th>
+              <th>Portfolio Size</th>
+              <th>Risk Score</th>
+              <th>Risk Indicator</th>
+              <th>Fraud Exposure</th>
+              <th>Management Signal</th>
+              <th>Owner</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="ceoBody"></tbody>
+        </table>
+      </div>
       <div class="panel"><div class="panel-title"><h3>Decision-Focused Actions</h3></div><div class="list"><div class="item"><div class="item-top"><b class="item-title">Rebalance growth toward secured assets</b><span class="badge green-b">Green</span></div><p>Use the 3.42% NIM and green retail banking risk to expand secured lending.</p></div><div class="item"><div class="item-top"><b class="item-title">Tighten unsecured credit appetite</b><span class="badge yellow-b">Yellow</span></div><p>Review score cut-offs for unsecured loans causing fresh slippages.</p></div><div class="item"><div class="item-top"><b class="item-title">Fund fraud-control upgrade</b><span class="badge amber-b">Amber</span></div><p>Prioritise fraud monitoring because credit cards show the highest fraud exposure in the table.</p></div></div></div>
+      <div class="panel">
+        <div class="panel-title"><h3>Create / Update Business Segment</h3><p id="ceoMode">New segment</p></div>
+        <form id="ceoForm" class="form-grid">
+          <input type="hidden" id="ceoId">
+          <input id="ceoSegmentName" placeholder="Segment Name" required>
+          <input id="ceoRevenue" placeholder="Revenue (e.g. ₹184.2 Cr)" required>
+          <input id="ceoPortfolioSize" placeholder="Portfolio Size (e.g. ₹5,420 Cr)" required>
+          <input id="ceoRiskScore" type="number" min="0" max="100" placeholder="Risk Score" required>
+          <select id="ceoRiskIndicator"><option>Green</option><option>Yellow</option><option>Amber</option><option>Red</option></select>
+          <input id="ceoFraudExposure" placeholder="Fraud Exposure (e.g. ₹6.8L)" required>
+          <input id="ceoManagementSignal" placeholder="Management Signal" required>
+          <input id="ceoOwner" placeholder="Owner" required>
+          <button class="action-btn" type="submit">Save Segment</button>
+        </form>
+        <div class="message-line" id="ceoMessage"></div>
+      </div>
     </section>
 
     <section class="dashboard" id="credit">
@@ -144,8 +177,56 @@ if(!token){
       <div class="slideshow"><div class="slide-head"><h3>Credit Risk Slide Show</h3><div class="slide-indicators"><i class="indicator active"></i><i class="indicator"></i><i class="indicator"></i></div></div><div class="slide active"><h4>Portfolio Risk View</h4><p>Digital personal loans carry 4.4% 90+ DPD and ₹31.2 Cr expected credit loss, making it the highest-risk credit portfolio.</p></div><div class="slide"><h4>Underwriting Quality</h4><p>Approval quality rate is 91.6%, meaning recent scorecard decisions are stable for prime and secured products.</p></div><div class="slide"><h4>Risk Control Direction</h4><p>High-risk exposure of ₹318 Cr requires tighter score cut-offs, income validation, and limit freeze rules.</p></div></div>
       <div class="kpis"><div class="card yellow"><div class="label">30+ DPD Accounts</div><div class="value">4,820</div><div class="meta">Yellow: 6.4% rise over previous cycle.</div></div><div class="card amber"><div class="label">Portfolio at Risk 90+</div><div class="value">3.8%</div><div class="meta">Amber: above 3.2% internal tolerance.</div></div><div class="card green"><div class="label">Approval Quality Rate</div><div class="value">91.6%</div><div class="meta">Green: new approvals performing within policy bands.</div></div><div class="card red"><div class="label">High-Risk Exposure</div><div class="value">₹318 Cr</div><div class="meta">Red: concentration in unsecured loans.</div></div></div>
       <div class="grid2"><div class="panel"><div class="panel-title"><h3>Credit Alerts</h3><p>Alert table summary</p></div><div class="table-wrap" style="margin:0"><table style="min-width:560px"><thead><tr><th>Alert</th><th>Risk</th><th>Action</th></tr></thead><tbody><tr><td>90+ DPD breach in digital personal loans</td><td><span class="badge red-b">Red</span></td><td>Freeze risky cohorts</td></tr><tr><td>Credit card utilization above 85%</td><td><span class="badge amber-b">Amber</span></td><td>Reduce limit increase offers</td></tr><tr><td>Home loan book remains stable</td><td><span class="badge green-b">Green</span></td><td>Continue controlled growth</td></tr></tbody></table></div></div><div class="panel"><div class="panel-title"><h3>AI Credit Insights</h3></div><div class="list"><div class="item"><div class="item-top"><b class="item-title">Limit Freeze Recommended</b><span class="badge red-b">Red</span></div><p>₹318 Cr high-risk exposure requires freezing incremental limits for low-documentation unsecured customers.</p></div><div class="item"><div class="item-top"><b class="item-title">Early Delinquency Intervention</b><span class="badge yellow-b">Yellow</span></div><p>4,820 accounts in 30+ DPD should receive early treatment before roll-forward to 60+ DPD.</p></div><div class="item"><div class="item-top"><b class="item-title">Secured Growth Opportunity</b><span class="badge green-b">Green</span></div><p>Approval quality of 91.6% supports continuation of secured lending growth.</p></div></div></div></div>
-      <div class="table-wrap"><table><thead><tr><th>Portfolio</th><th>Outstanding</th><th>30+ DPD</th><th>90+ DPD</th><th>Expected Credit Loss</th><th>Risk Score</th><th>Risk Indicator</th><th>Recommended Control</th></tr></thead><tbody><tr><td>Credit Cards - Revolving</td><td>₹680 Cr</td><td>5.9%</td><td>3.5%</td><td>₹24.8 Cr</td><td><span class="score">71</span></td><td><span class="badge amber-b">Amber</span></td><td>Reduce limit increases for high utilization accounts</td></tr><tr><td>Digital Personal Loans</td><td>₹520 Cr</td><td>7.2%</td><td>4.4%</td><td>₹31.2 Cr</td><td><span class="score">86</span></td><td><span class="badge red-b">Red</span></td><td>Tighten score cut-off and income validation</td></tr><tr><td>Home Loans</td><td>₹2,740 Cr</td><td>1.1%</td><td>0.5%</td><td>₹8.7 Cr</td><td><span class="score">22</span></td><td><span class="badge green-b">Green</span></td><td>Continue secured growth</td></tr><tr><td>SME Working Capital</td><td>₹1,120 Cr</td><td>4.8%</td><td>2.9%</td><td>₹19.6 Cr</td><td><span class="score">55</span></td><td><span class="badge yellow-b">Yellow</span></td><td>Monitor cash-flow stress by sector</td></tr></tbody></table></div>
+      <div class="panel">
+        <div class="panel-title"><h3>Search and Filter Loans</h3><p>Database records</p></div>
+        <div class="toolbar">
+          <input id="loanSearch" placeholder="Search customer name, loan type">
+          <select id="loanStatusFilter">
+            <option value="">All Statuses</option>
+            <option>Active</option>
+            <option>Overdue</option>
+            <option>In Review</option>
+          </select>
+          <select id="loanRiskFilter">
+            <option value="">All Risk Grades</option>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+          </select>
+          <button class="action-btn" id="loanFilterBtn" type="button">Apply</button>
+          <button class="action-btn muted-btn" id="loanResetBtn" type="button">Reset</button>
+        </div>
+        <div class="table-wrap" style="margin:0">
+          <table>
+            <thead>
+              <tr>
+                <th>Loan ID</th>
+                <th>Customer Name</th>
+                <th>Loan Amount</th>
+                <th>Loan Type</th>
+                <th>Risk Grade</th>
+                <th>Loan Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="loanBody"></tbody>
+          </table>
+        </div>
+      </div>
       <div class="panel"><div class="panel-title"><h3>Decision-Focused Actions</h3></div><div class="list"><div class="item"><div class="item-top"><b class="item-title">Tighten digital personal loan policy</b><span class="badge red-b">Red</span></div><p>Digital personal loans have 4.4% 90+ DPD and ₹31.2 Cr ECL, so approval criteria should be tightened.</p></div><div class="item"><div class="item-top"><b class="item-title">Launch 30+ DPD early warning campaign</b><span class="badge yellow-b">Yellow</span></div><p>Use proactive contact for 4,820 accounts before delinquency worsens.</p></div><div class="item"><div class="item-top"><b class="item-title">Shift new growth to home loans</b><span class="badge green-b">Green</span></div><p>Home loans show 0.5% 90+ DPD and green risk status.</p></div></div></div>
+      <div class="panel">
+        <div class="panel-title"><h3>Create / Update Loan</h3><p id="loanMode">New loan</p></div>
+        <form id="loanForm" class="form-grid">
+          <input type="hidden" id="loanId">
+          <input id="loanCustomerId" type="number" placeholder="Customer ID" required>
+          <input id="loanAmount" type="number" step="0.01" min="0" placeholder="Loan Amount" required>
+          <input id="loanType" placeholder="Loan Type" required>
+          <select id="loanRiskGrade"><option>A</option><option>B</option><option>C</option></select>
+          <select id="loanStatus"><option>Active</option><option>Overdue</option><option>In Review</option></select>
+          <button class="action-btn" type="submit">Save Loan</button>
+        </form>
+        <div class="message-line" id="loanMessage"></div>
+      </div>
     </section>
 
     <section class="dashboard" id="fraud">
@@ -154,8 +235,41 @@ if(!token){
       <div class="kpis"><div class="card red"><div class="label">High-Risk Fraud Cases</div><div class="value">126</div><div class="meta">Red: account takeover and mule networks.</div></div><div class="card amber"><div class="label">Card-Not-Present Loss</div><div class="value">₹28.4L</div><div class="meta">Amber: ecommerce risk concentration.</div></div><div class="card green"><div class="label">Real-Time Block Rate</div><div class="value">93.2%</div><div class="meta">Green: automated prevention performing strongly.</div></div><div class="card yellow"><div class="label">False Positive Rate</div><div class="value">4.7%</div><div class="meta">Yellow: manual review load increasing.</div></div></div>
       <div class="grid2"><div class="panel"><div class="panel-title"><h3>Fraud Risk Heat Map</h3><p>Risk by channel and typology</p></div><div class="mini-grid"><div class="heat red"><strong>Mobile Banking</strong><span>ATO cluster: 18 linked accounts</span><span class="badge red-b">Red</span></div><div class="heat amber"><strong>Ecommerce Cards</strong><span>₹28.4L CNP exposure</span><span class="badge amber-b">Amber</span></div><div class="heat yellow"><strong>UPI Wallet</strong><span>Velocity pattern rising</span><span class="badge yellow-b">Yellow</span></div><div class="heat green"><strong>Branch Channel</strong><span>Low fraud queue</span><span class="badge green-b">Green</span></div></div></div><div class="panel"><div class="panel-title"><h3>AI Fraud Insights</h3></div><div class="list"><div class="item"><div class="item-top"><b class="item-title">Prioritise Account Takeover</b><span class="badge red-b">Red</span></div><p>126 high-risk cases and mobile ATO cluster require temporary holds and senior analyst review.</p></div><div class="item"><div class="item-top"><b class="item-title">Tune Ecommerce Rules</b><span class="badge amber-b">Amber</span></div><p>₹28.4L CNP loss indicates stronger ecommerce merchant and international velocity rules are needed.</p></div><div class="item"><div class="item-top"><b class="item-title">Reduce Customer Friction</b><span class="badge yellow-b">Yellow</span></div><p>False positive rate of 4.7% should be recalibrated to lower unnecessary manual reviews.</p></div></div></div></div>
       <div class="grid2"><div class="panel"><div class="panel-title"><h3>Fraud Alerts</h3></div><div class="list"><div class="item"><div class="item-top"><b class="item-title">Account Takeover Cluster</b><span class="badge red-b">Red</span></div><p>Device change, password reset, and high-value transfer within 22 minutes.</p></div><div class="item"><div class="item-top"><b class="item-title">Ecommerce Merchant Spike</b><span class="badge amber-b">Amber</span></div><p>Chargebacks concentrated in two merchant categories.</p></div><div class="item"><div class="item-top"><b class="item-title">Block Engine Stable</b><span class="badge green-b">Green</span></div><p>93.2% real-time block rate prevents most high-confidence fraud attempts.</p></div></div></div><div class="panel"><div class="panel-title"><h3>Fraud Control Status</h3></div><div class="list"><div class="item"><div class="item-top"><b class="item-title">Step-up Authentication</b><span class="badge amber-b">Amber</span></div><p>Apply step-up authentication to repeated international card transactions.</p></div><div class="item"><div class="item-top"><b class="item-title">Mule Account Review</b><span class="badge red-b">Red</span></div><p>Immediate AML review for accounts with rapid cash-out after multiple credits.</p></div><div class="item"><div class="item-top"><b class="item-title">Rule Calibration</b><span class="badge yellow-b">Yellow</span></div><p>Balance fraud capture with false positive reduction.</p></div></div></div></div>
-      <div class="table-wrap"><table><thead><tr><th>Case ID</th><th>Fraud Typology</th><th>Channel</th><th>Amount at Risk</th><th>Signal Pattern</th><th>Risk Score</th><th>Risk Indicator</th><th>Fraud Action</th></tr></thead><tbody><tr><td>FRD-24091</td><td>Account Takeover</td><td>Mobile Banking</td><td>₹9.8L</td><td>New device + password reset + instant beneficiary transfer</td><td><span class="score">94</span></td><td><span class="badge red-b">Red</span></td><td>Freeze transfer and call customer</td></tr><tr><td>FRD-24108</td><td>Card-Not-Present</td><td>Ecommerce</td><td>₹4.6L</td><td>International transactions within 8 minutes</td><td><span class="score">78</span></td><td><span class="badge amber-b">Amber</span></td><td>Block card and require step-up authentication</td></tr><tr><td>FRD-24122</td><td>Mule Account Pattern</td><td>UPI / Wallet</td><td>₹7.2L</td><td>Multiple credits followed by immediate cash-out</td><td><span class="score">91</span></td><td><span class="badge red-b">Red</span></td><td>Hold account and initiate AML review</td></tr><tr><td>FRD-24137</td><td>Velocity Abuse</td><td>Credit Card</td><td>₹1.1L</td><td>Six failed attempts followed by approved transaction</td><td><span class="score">56</span></td><td><span class="badge yellow-b">Yellow</span></td><td>Monitor and require OTP reverification</td></tr></tbody></table></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Case ID</th>
+              <th>Fraud Typology</th>
+              <th>Channel</th>
+              <th>Amount at Risk</th>
+              <th>Signal Pattern</th>
+              <th>Risk Score</th>
+              <th>Risk Indicator</th>
+              <th>Fraud Action</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="fraudBody"></tbody>
+        </table>
+      </div>
       <div class="panel"><div class="panel-title"><h3>Decision-Focused Actions</h3></div><div class="list"><div class="item"><div class="item-top"><b class="item-title">Assign red cases to senior analysts</b><span class="badge red-b">Red</span></div><p>FRD-24091 and FRD-24122 have high-risk scores above 90 and high amount at risk.</p></div><div class="item"><div class="item-top"><b class="item-title">Strengthen card-not-present controls</b><span class="badge amber-b">Amber</span></div><p>Use ecommerce and international transaction velocity rules to reduce ₹28.4L CNP loss.</p></div><div class="item"><div class="item-top"><b class="item-title">Tune false positive thresholds</b><span class="badge yellow-b">Yellow</span></div><p>Reduce customer friction while preserving the 93.2% real-time block rate.</p></div></div></div>
+      <div class="panel">
+        <div class="panel-title"><h3>Create / Update Fraud Case</h3><p id="fraudMode">New case</p></div>
+        <form id="fraudForm" class="form-grid">
+          <input type="hidden" id="fraudId">
+          <input id="fraudCaseId" placeholder="Case ID (e.g. FRD-24091)" required>
+          <input id="fraudTypology" placeholder="Fraud Typology" required>
+          <input id="fraudChannel" placeholder="Channel" required>
+          <input id="fraudAmountAtRisk" placeholder="Amount at Risk (e.g. ₹12.4L)" required>
+          <input id="fraudSignalPattern" placeholder="Signal Pattern" required>
+          <input id="fraudRiskScore" type="number" min="0" max="100" placeholder="Risk Score" required>
+          <select id="fraudRiskIndicator"><option>Green</option><option>Yellow</option><option>Amber</option><option>Red</option></select>
+          <input id="fraudAction" placeholder="Fraud Action" required>
+          <button class="action-btn" type="submit">Save Fraud Case</button>
+        </form>
+        <div class="message-line" id="fraudMessage"></div>
+      </div>
     </section>
 
     <section class="dashboard" id="collections">
@@ -164,8 +278,43 @@ if(!token){
       <div class="kpis"><div class="card amber"><div class="label">Total Overdue Amount</div><div class="value">₹86.7 Cr</div><div class="meta">Amber: concentrated in 31-60 DPD.</div></div><div class="card yellow"><div class="label">Roll-Forward Rate</div><div class="value">14.8%</div><div class="meta">Yellow: more accounts moving to 60+ DPD.</div></div><div class="card green"><div class="label">Promise-to-Pay Kept</div><div class="value">72.5%</div><div class="meta">Green: digital reminder flow is effective.</div></div><div class="card red"><div class="label">Legal Escalation Queue</div><div class="value">342</div><div class="meta">Red: chronic delinquency needs review.</div></div></div>
       <div class="grid2"><div class="panel"><div class="panel-title"><h3>Collection Cards</h3></div><div class="mini-grid"><div class="heat green"><strong>Low DPD</strong><span>0-15 days: digital reminders</span><span class="badge green-b">Green</span></div><div class="heat yellow"><strong>Early Risk</strong><span>16-30 days: payment nudges</span><span class="badge yellow-b">Yellow</span></div><div class="heat amber"><strong>High Attention</strong><span>31-90 days: collector calls</span><span class="badge amber-b">Amber</span></div><div class="heat red"><strong>Critical</strong><span>91+ days: legal review</span><span class="badge red-b">Red</span></div></div></div><div class="panel"><div class="panel-title"><h3>AI Collection Recommendations</h3></div><div class="list"><div class="item"><div class="item-top"><b class="item-title">Prioritise 31-60 DPD</b><span class="badge amber-b">Amber</span></div><p>₹86.7 Cr overdue and 14.8% roll-forward rate indicate focus on accounts moving toward 60+ DPD.</p></div><div class="item"><div class="item-top"><b class="item-title">Use Digital Recovery for PTP Customers</b><span class="badge green-b">Green</span></div><p>72.5% promise-to-pay kept rate supports automated payment links and WhatsApp reminders.</p></div><div class="item"><div class="item-top"><b class="item-title">Segment Legal Queue</b><span class="badge red-b">Red</span></div><p>342 legal escalation accounts should be prioritised by recoverability score and outstanding value.</p></div></div></div></div>
       <div class="grid2"><div class="panel"><div class="panel-title"><h3>Collections Alerts</h3></div><div class="list"><div class="item"><div class="item-top"><b class="item-title">High-Value Chronic Delinquency</b><span class="badge red-b">Red</span></div><p>342 accounts are in legal escalation after repeated broken promises.</p></div><div class="item"><div class="item-top"><b class="item-title">31-60 DPD Bucket Pressure</b><span class="badge amber-b">Amber</span></div><p>Overdue amount is concentrated in unsecured loans and credit card receivables.</p></div><div class="item"><div class="item-top"><b class="item-title">PTP Behaviour Stable</b><span class="badge green-b">Green</span></div><p>Promise-to-pay kept ratio is 72.5%, allowing low-cost digital recovery.</p></div></div></div><div class="panel"><div class="panel-title"><h3>Recovery Manager View</h3></div><div class="list"><div class="item"><div class="item-top"><b class="item-title">Agency Allocation</b><span class="badge amber-b">Amber</span></div><p>Assign external agencies only to high outstanding accounts with low self-cure probability.</p></div><div class="item"><div class="item-top"><b class="item-title">Restructuring Review</b><span class="badge yellow-b">Yellow</span></div><p>Offer restructuring for customers with temporary cash-flow stress and connected contact history.</p></div><div class="item"><div class="item-top"><b class="item-title">Legal Cost Control</b><span class="badge red-b">Red</span></div><p>Send only recoverable chronic cases to legal workflow.</p></div></div></div></div>
-      <div class="table-wrap"><table><thead><tr><th>Customer ID</th><th>Product</th><th>Outstanding</th><th>DPD Bucket</th><th>Recovery Score</th><th>Last Contact</th><th>PTP Status</th><th>Risk</th><th>Treatment</th></tr></thead><tbody><tr><td>CUS-78542</td><td>Credit Card</td><td>₹1.86L</td><td>31-60 DPD</td><td><span class="score">68</span></td><td>SMS accepted</td><td>Promise due in 2 days</td><td><span class="badge yellow-b">Yellow</span></td><td>Send digital reminder and payment link</td></tr><tr><td>CUS-81109</td><td>Personal Loan</td><td>₹7.42L</td><td>91+ DPD</td><td><span class="score">32</span></td><td>No response</td><td>Broken twice</td><td><span class="badge red-b">Red</span></td><td>Escalate after recoverability scoring</td></tr><tr><td>CUS-79031</td><td>Two-Wheeler Loan</td><td>₹68,400</td><td>16-30 DPD</td><td><span class="score">84</span></td><td>Phone connected</td><td>Likely to pay</td><td><span class="badge green-b">Green</span></td><td>Offer partial payment plan</td></tr><tr><td>CUS-80318</td><td>Digital Personal Loan</td><td>₹3.25L</td><td>61-90 DPD</td><td><span class="score">51</span></td><td>WhatsApp delivered</td><td>No commitment</td><td><span class="badge amber-b">Amber</span></td><td>Assign human collector and offer restructuring</td></tr></tbody></table></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Customer ID</th>
+              <th>Product</th>
+              <th>Outstanding</th>
+              <th>DPD Bucket</th>
+              <th>Recovery Score</th>
+              <th>Last Contact</th>
+              <th>PTP Status</th>
+              <th>Risk</th>
+              <th>Treatment</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="collectionsBody"></tbody>
+        </table>
+      </div>
       <div class="panel"><div class="panel-title"><h3>Decision-Focused Actions</h3></div><div class="list"><div class="item"><div class="item-top"><b class="item-title">Prioritise high-value 61+ DPD accounts</b><span class="badge amber-b">Amber</span></div><p>CUS-80318 has ₹3.25L outstanding and 61-90 DPD, requiring human collector intervention.</p></div><div class="item"><div class="item-top"><b class="item-title">Automate reminders for cooperative customers</b><span class="badge green-b">Green</span></div><p>CUS-79031 has a recovery score of 84 and phone contact, suitable for digital/self-service repayment.</p></div><div class="item"><div class="item-top"><b class="item-title">Send chronic cases to recoverability review</b><span class="badge red-b">Red</span></div><p>CUS-81109 has 91+ DPD and broken promises, so legal review should follow recovery scoring.</p></div></div></div>
+      <div class="panel">
+        <div class="panel-title"><h3>Create / Update Collections Case</h3><p id="collectionsMode">New case</p></div>
+        <form id="collectionsForm" class="form-grid">
+          <input type="hidden" id="collectionsId">
+          <input id="collectionsCustomerId" placeholder="Customer ID (e.g. CUS-78542)" required>
+          <input id="collectionsProduct" placeholder="Product" required>
+          <input id="collectionsOutstanding" placeholder="Outstanding Amount" required>
+          <input id="collectionsDpdBucket" placeholder="DPD Bucket" required>
+          <input id="collectionsRecoveryScore" type="number" min="0" max="100" placeholder="Recovery Score" required>
+          <input id="collectionsLastContact" placeholder="Last Contact" required>
+          <input id="collectionsPtpStatus" placeholder="PTP Status" required>
+          <select id="collectionsRisk"><option>Green</option><option>Yellow</option><option>Amber</option><option>Red</option></select>
+          <input id="collectionsTreatment" placeholder="Treatment" required>
+          <button class="action-btn" type="submit">Save Collections Case</button>
+        </form>
+        <div class="message-line" id="collectionsMessage"></div>
+      </div>
     </section>
 
     <section class="dashboard" id="crm">
@@ -174,8 +323,51 @@ if(!token){
       <div class="kpis"><div class="card green"><div class="label">Digital Active Customers</div><div class="value">72.4%</div><div class="meta">Green: mobile banking adoption rising.</div></div><div class="card yellow"><div class="label">Churn Risk Customers</div><div class="value">18,640</div><div class="meta">Yellow: salary account inactivity increasing.</div></div><div class="card amber"><div class="label">Complaint SLA Breaches</div><div class="value">312</div><div class="meta">Amber: card dispute complaints driving pressure.</div></div><div class="card green"><div class="label">Cross-Sell Conversion</div><div class="value">12.8%</div><div class="meta">Green: pre-approved offers performing well.</div></div></div>
       <div class="grid2"><div class="panel"><div class="panel-title"><h3>CRM Alerts</h3></div><div class="list"><div class="item"><div class="item-top"><b class="item-title">Service Experience Pressure</b><span class="badge amber-b">Amber</span></div><p>312 complaint SLA breaches are concentrated in credit card disputes.</p></div><div class="item"><div class="item-top"><b class="item-title">Salary Account Inactivity</b><span class="badge yellow-b">Yellow</span></div><p>18,640 customers show churn risk due to low salary credit frequency and app inactivity.</p></div><div class="item"><div class="item-top"><b class="item-title">Digital Engagement Stable</b><span class="badge green-b">Green</span></div><p>72.4% digital active customers create a strong base for personalized offers.</p></div></div></div><div class="panel"><div class="panel-title"><h3>AI Customer Insights</h3></div><div class="list"><div class="item"><div class="item-top"><b class="item-title">Target Churn Risk</b><span class="badge yellow-b">Yellow</span></div><p>18,640 churn-risk customers should receive salary reactivation offers.</p></div><div class="item"><div class="item-top"><b class="item-title">Resolve Card Disputes First</b><span class="badge amber-b">Amber</span></div><p>312 complaint SLA breaches show service recovery should prioritise credit card disputes.</p></div><div class="item"><div class="item-top"><b class="item-title">Scale App-Based Offers</b><span class="badge green-b">Green</span></div><p>72.4% digital active base and 12.8% cross-sell conversion support app-based recommendations.</p></div></div></div></div>
       <div class="grid2"><div class="panel"><div class="panel-title"><h3>Product Recommendations</h3></div><div class="list"><div class="item"><div class="item-top"><b class="item-title">Prime Salary Customers</b><span class="badge green-b">Green</span></div><p>Recommend rewards credit card and wealth starter plan based on stable salary credits.</p></div><div class="item"><div class="item-top"><b class="item-title">Inactive Salary Accounts</b><span class="badge yellow-b">Yellow</span></div><p>Recommend salary reactivation cashback instead of new borrowing products.</p></div><div class="item"><div class="item-top"><b class="item-title">Digital-Only FinTech Users</b><span class="badge green-b">Green</span></div><p>Recommend responsible instant-credit limit and wallet engagement offers.</p></div></div></div><div class="panel"><div class="panel-title"><h3>Personalization Strategy</h3></div><div class="list"><div class="item"><div class="item-top"><b class="item-title">Next Best Action</b><span class="badge green-b">Green</span></div><p>Use digital activity and product holding to decide the right offer and channel.</p></div><div class="item"><div class="item-top"><b class="item-title">Service-Led Retention</b><span class="badge amber-b">Amber</span></div><p>Customers with unresolved disputes should receive service resolution before sales offers.</p></div><div class="item"><div class="item-top"><b class="item-title">Responsible Lending Filter</b><span class="badge yellow-b">Yellow</span></div><p>Apply credit risk rules before offering any loan or card limit increase.</p></div></div></div></div>
-      <div class="table-wrap"><table><thead><tr><th>Customer Segment</th><th>Customer Count</th><th>Primary Need</th><th>Product Recommendation</th><th>Personalization Strategy</th><th>Expected Value</th><th>Risk</th></tr></thead><tbody><tr><td>Prime Salary Customers</td><td>42,800</td><td>Credit card / wealth product</td><td>Rewards credit card + SIP starter</td><td>In-app pre-approved offer after salary credit</td><td>₹8.4 Cr annual revenue potential</td><td><span class="badge green-b">Green</span></td></tr><tr><td>Inactive Salary Accounts</td><td>18,640</td><td>Retention offer</td><td>Salary reactivation cashback</td><td>SMS + app notification before salary cycle</td><td>₹3.1 Cr deposit retention impact</td><td><span class="badge yellow-b">Yellow</span></td></tr><tr><td>Credit Card Dispute Customers</td><td>5,920</td><td>Service resolution</td><td>Fee reversal review, not new offer</td><td>Priority complaint closure</td><td>Trust protection</td><td><span class="badge amber-b">Amber</span></td></tr><tr><td>Digital-Only FinTech Users</td><td>96,300</td><td>Instant lending / wallet engagement</td><td>Responsible small-ticket credit line</td><td>Real-time in-app eligibility check</td><td>₹11.2 Cr revenue opportunity</td><td><span class="badge green-b">Green</span></td></tr></tbody></table></div>
+      <div class="panel">
+        <div class="panel-title"><h3>Search and Filter Customers</h3><p>Database records</p></div>
+        <div class="toolbar">
+          <input id="crmSearch" placeholder="Search customer name, city">
+          <select id="crmSegmentFilter">
+            <option value="">All Segments</option>
+            <option>Retail</option>
+            <option>Corporate</option>
+            <option>Premium</option>
+          </select>
+          <button class="action-btn" id="crmFilterBtn" type="button">Apply</button>
+          <button class="action-btn muted-btn" id="crmResetBtn" type="button">Reset</button>
+        </div>
+        <div class="table-wrap" style="margin:0">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Customer Name</th>
+                <th>Age</th>
+                <th>City</th>
+                <th>Segment</th>
+                <th>Account Balance</th>
+                <th>Created At</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="crmBody"></tbody>
+          </table>
+        </div>
+      </div>
       <div class="panel"><div class="panel-title"><h3>Decision-Focused Actions</h3></div><div class="list"><div class="item"><div class="item-top"><b class="item-title">Launch churn prevention campaign</b><span class="badge yellow-b">Yellow</span></div><p>Target 18,640 inactive salary customers with salary-credit reactivation offers.</p></div><div class="item"><div class="item-top"><b class="item-title">Prioritise card dispute resolution</b><span class="badge amber-b">Amber</span></div><p>Resolve 312 SLA breaches before sending product offers to complaint customers.</p></div><div class="item"><div class="item-top"><b class="item-title">Scale digital next-best-action engine</b><span class="badge green-b">Green</span></div><p>Use 72.4% digital active customer base and 12.8% conversion to deliver personalised offers.</p></div></div></div>
+      <div class="panel">
+        <div class="panel-title"><h3>Create / Update Customer</h3><p id="crmMode">New customer</p></div>
+        <form id="crmForm" class="form-grid">
+          <input type="hidden" id="crmId">
+          <input id="crmName" placeholder="Customer Name" required>
+          <input id="crmAge" type="number" min="0" placeholder="Age" required>
+          <input id="crmCity" placeholder="City" required>
+          <select id="crmSegment"><option>Retail</option><option>Premium</option><option>Corporate</option></select>
+          <input id="crmBalance" type="number" step="0.01" min="0" placeholder="Account Balance" required>
+          <button class="action-btn" type="submit">Save Customer</button>
+        </form>
+        <div class="message-line" id="crmMessage"></div>
+      </div>
     </section>
 
     <section class="dashboard" id="treasury">
@@ -184,8 +376,41 @@ if(!token){
       <div class="kpis"><div class="card green"><div class="label">Liquidity Coverage Ratio</div><div class="value">126%</div><div class="meta">Green: above operating threshold.</div></div><div class="card yellow"><div class="label">7-Day Cash Flow Gap</div><div class="value">₹142 Cr</div><div class="meta">Yellow: deposit maturities next week.</div></div><div class="card amber"><div class="label">Interest Rate VaR</div><div class="value">₹18.6 Cr</div><div class="meta">Amber: bond book sensitivity increased.</div></div><div class="card green"><div class="label">FX Open Position</div><div class="value">₹24 Cr</div><div class="meta">Green: within ₹50 Cr dealer limit.</div></div></div>
       <div class="grid2"><div class="panel"><div class="panel-title"><h3>Market Stress Alerts</h3></div><div class="list"><div class="item"><div class="item-top"><b class="item-title">Bond Book Rate Sensitivity</b><span class="badge amber-b">Amber</span></div><p>Interest Rate VaR is ₹18.6 Cr after adverse yield movement.</p></div><div class="item"><div class="item-top"><b class="item-title">Short-Term Funding Gap</b><span class="badge yellow-b">Yellow</span></div><p>7-day cash-flow gap is ₹142 Cr due to wholesale deposit maturities.</p></div><div class="item"><div class="item-top"><b class="item-title">FX Dealer Limit Stable</b><span class="badge green-b">Green</span></div><p>FX open position is ₹24 Cr, below the approved ₹50 Cr limit.</p></div></div></div><div class="panel"><div class="panel-title"><h3>AI Treasury Insights</h3></div><div class="list"><div class="item"><div class="item-top"><b class="item-title">Liquidity Buffer Adequate</b><span class="badge green-b">Green</span></div><p>LCR of 126% supports stable liquidity under the demo operating threshold.</p></div><div class="item"><div class="item-top"><b class="item-title">Pre-Fund Upcoming Gap</b><span class="badge yellow-b">Yellow</span></div><p>₹142 Cr 7-day cash-flow gap suggests arranging short-term funding before maturities peak.</p></div><div class="item"><div class="item-top"><b class="item-title">Hedge Rate Risk</b><span class="badge amber-b">Amber</span></div><p>Interest Rate VaR of ₹18.6 Cr supports partial hedging or duration reduction.</p></div></div></div></div>
       <div class="grid2"><div class="panel"><div class="panel-title"><h3>Investment Decisions</h3></div><div class="list"><div class="item"><div class="item-top"><b class="item-title">Government Securities Book</b><span class="badge amber-b">Amber</span></div><p>Reduce duration because utilization is high and yield volatility is elevated.</p></div><div class="item"><div class="item-top"><b class="item-title">Liquid Assets</b><span class="badge green-b">Green</span></div><p>Maintain high-quality liquid assets above minimum buffer.</p></div><div class="item"><div class="item-top"><b class="item-title">Short-Term Instruments</b><span class="badge yellow-b">Yellow</span></div><p>Use short-term money market instruments to manage near-term gap.</p></div></div></div><div class="panel"><div class="panel-title"><h3>Funding Strategy & Hedging</h3></div><div class="list"><div class="item"><div class="item-top"><b class="item-title">Repo / Short-Term Borrowing</b><span class="badge yellow-b">Yellow</span></div><p>Arrange pre-funding for ₹142 Cr gap.</p></div><div class="item"><div class="item-top"><b class="item-title">Interest Rate Hedge</b><span class="badge amber-b">Amber</span></div><p>Use hedge overlay for bond book exposure where appropriate.</p></div><div class="item"><div class="item-top"><b class="item-title">FX Monitoring</b><span class="badge green-b">Green</span></div><p>Continue intraday dealer monitoring since FX open position is within limit.</p></div></div></div></div>
-      <div class="table-wrap"><table><thead><tr><th>Treasury Position</th><th>Exposure</th><th>Limit</th><th>Utilisation</th><th>Market Signal</th><th>Risk Score</th><th>Risk</th><th>Recommended Action</th></tr></thead><tbody><tr><td>Government Securities Book</td><td>₹1,260 Cr</td><td>₹1,500 Cr</td><td><div class="progress amber"><div style="width:84%"></div></div></td><td>Yield volatility elevated</td><td><span class="score">74</span></td><td><span class="badge amber-b">Amber</span></td><td>Reduce duration or use hedge overlay</td></tr><tr><td>FX Open Position</td><td>₹24 Cr</td><td>₹50 Cr</td><td><div class="progress green"><div style="width:48%"></div></div></td><td>Within dealer appetite</td><td><span class="score">26</span></td><td><span class="badge green-b">Green</span></td><td>Continue intraday monitoring</td></tr><tr><td>Wholesale Deposit Maturity</td><td>₹310 Cr</td><td>₹400 Cr</td><td><div class="progress yellow"><div style="width:78%"></div></div></td><td>Concentrated maturity next week</td><td><span class="score">57</span></td><td><span class="badge yellow-b">Yellow</span></td><td>Pre-arrange repo or short-term borrowing</td></tr><tr><td>High Quality Liquid Assets</td><td>₹890 Cr</td><td>₹760 Cr minimum</td><td><div class="progress green"><div style="width:100%"></div></div></td><td>Comfortable liquidity buffer</td><td><span class="score">20</span></td><td><span class="badge green-b">Green</span></td><td>Maintain buffer for stress scenario</td></tr></tbody></table></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Treasury Position</th>
+              <th>Exposure</th>
+              <th>Limit</th>
+              <th>Utilisation</th>
+              <th>Market Signal</th>
+              <th>Risk Score</th>
+              <th>Risk</th>
+              <th>Recommended Action</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="treasuryBody"></tbody>
+        </table>
+      </div>
       <div class="panel"><div class="panel-title"><h3>Decision-Focused Actions</h3></div><div class="list"><div class="item"><div class="item-top"><b class="item-title">Pre-fund wholesale maturity gap</b><span class="badge yellow-b">Yellow</span></div><p>Arrange funding before ₹310 Cr wholesale deposits mature and ₹142 Cr cash-flow gap peaks.</p></div><div class="item"><div class="item-top"><b class="item-title">Reduce bond book duration risk</b><span class="badge amber-b">Amber</span></div><p>Interest Rate VaR of ₹18.6 Cr and 84% utilization require hedging or duration reduction.</p></div><div class="item"><div class="item-top"><b class="item-title">Maintain FX discipline</b><span class="badge green-b">Green</span></div><p>FX position is ₹24 Cr against ₹50 Cr limit, so monitoring is enough.</p></div></div></div>
+      <div class="panel">
+        <div class="panel-title"><h3>Create / Update Treasury Position</h3><p id="treasuryMode">New position</p></div>
+        <form id="treasuryForm" class="form-grid">
+          <input type="hidden" id="treasuryId">
+          <input id="treasuryPosition" placeholder="Treasury Position" required>
+          <input id="treasuryExposure" placeholder="Exposure" required>
+          <input id="treasuryLimit" placeholder="Limit" required>
+          <input id="treasuryUtilisationPercent" type="number" min="0" max="100" placeholder="Utilisation %" required>
+          <input id="treasuryMarketSignal" placeholder="Market Signal" required>
+          <input id="treasuryRiskScore" type="number" min="0" max="100" placeholder="Risk Score" required>
+          <select id="treasuryRisk"><option>Green</option><option>Yellow</option><option>Amber</option><option>Red</option></select>
+          <input id="treasuryRecommendedAction" placeholder="Recommended Action" required>
+          <button class="action-btn" type="submit">Save Position</button>
+        </form>
+        <div class="message-line" id="treasuryMessage"></div>
+      </div>
     </section>
 
     <section class="dashboard" id="operations">
@@ -467,9 +692,552 @@ async function saveUserAccess(id){
     loadUsers();
 }
 
+async function loadCustomers(){
+    if(!access[role]?.includes("crm"))return;
+    const search = document.getElementById("crmSearch")?.value || "";
+    const segment = document.getElementById("crmSegmentFilter")?.value || "";
+    const params = new URLSearchParams({ search, segment });
+    const body = document.getElementById("crmBody");
+    if(!body)return;
+    try {
+        const response = await fetch(`http://localhost:5000/api/data/customers?${params}`, {
+            headers: apiHeaders
+        });
+        if(!response.ok){
+            body.innerHTML = `<tr><td colspan="8">Unable to load customers</td></tr>`;
+            return;
+        }
+        const data = await response.json();
+        window.crmCache = data;
+        body.innerHTML = data.map(item => `
+            <tr>
+                <td>${item.id}</td>
+                <td>${item.customer_name}</td>
+                <td>${item.age}</td>
+                <td>${item.city}</td>
+                <td><span class="badge ${item.segment === 'Premium' ? 'green-b' : item.segment === 'Corporate' ? 'amber-b' : 'yellow-b'}">${item.segment}</span></td>
+                <td>₹${Number(item.account_balance).toLocaleString("en-IN", {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
+                <td>${new Date(item.created_at).toLocaleDateString("en-IN")}</td>
+                <td>
+                    <button class="action-btn muted-btn" onclick="editCrm(${item.id})">Edit</button>
+                    ${role === "admin" ? `<button class="action-btn danger-btn" onclick="deleteCrm(${item.id})">Delete</button>` : ""}
+                </td>
+            </tr>
+        `).join("");
+    } catch(error) {
+        console.error(error);
+        body.innerHTML = `<tr><td colspan="8">Error loading customers</td></tr>`;
+    }
+}
+
+async function loadLoans(){
+    if(!access[role]?.includes("credit"))return;
+    const search = document.getElementById("loanSearch")?.value || "";
+    const status = document.getElementById("loanStatusFilter")?.value || "";
+    const risk = document.getElementById("loanRiskFilter")?.value || "";
+    const params = new URLSearchParams({ search, status, risk });
+    const body = document.getElementById("loanBody");
+    if(!body)return;
+    try {
+        const response = await fetch(`http://localhost:5000/api/data/loans?${params}`, {
+            headers: apiHeaders
+        });
+        if(!response.ok){
+            body.innerHTML = `<tr><td colspan="7">Unable to load loans</td></tr>`;
+            return;
+        }
+        const data = await response.json();
+        window.loanCache = data;
+        body.innerHTML = data.map(item => `
+            <tr>
+                <td>${item.id}</td>
+                <td>${item.customer_name || 'Customer #' + item.customer_id}</td>
+                <td>₹${Number(item.loan_amount).toLocaleString("en-IN", {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
+                <td>${item.loan_type}</td>
+                <td><span class="score">${item.risk_grade}</span></td>
+                <td><span class="badge ${item.loan_status === 'Active' ? 'green-b' : item.loan_status === 'Overdue' ? 'red-b' : 'yellow-b'}">${item.loan_status}</span></td>
+                <td>
+                    <button class="action-btn muted-btn" onclick="editLoan(${item.id})">Edit</button>
+                    ${role === "admin" ? `<button class="action-btn danger-btn" onclick="deleteLoan(${item.id})">Delete</button>` : ""}
+                </td>
+            </tr>
+        `).join("");
+    } catch(error) {
+        console.error(error);
+        body.innerHTML = `<tr><td colspan="7">Error loading loans</td></tr>`;
+    }
+}
+
+async function loadCeoSegments(){
+    if(!access[role]?.includes("ceo"))return;
+    const body = document.getElementById("ceoBody");
+    if(!body)return;
+    try {
+        const response = await fetch("http://localhost:5000/api/data/ceo-segments", {
+            headers: apiHeaders
+        });
+        if(!response.ok) return;
+        const data = await response.json();
+        window.ceoCache = data;
+        body.innerHTML = data.map(item => `
+            <tr>
+                <td>${item.segment_name}</td>
+                <td>${item.revenue}</td>
+                <td>${item.portfolio_size}</td>
+                <td><span class="score">${item.risk_score}</span></td>
+                <td><span class="badge ${item.risk_indicator.toLowerCase() === 'green' ? 'green-b' : item.risk_indicator.toLowerCase() === 'amber' ? 'amber-b' : 'yellow-b'}">${item.risk_indicator}</span></td>
+                <td>${item.fraud_exposure}</td>
+                <td>${item.management_signal}</td>
+                <td>${item.owner}</td>
+                <td>
+                    <button class="action-btn muted-btn" onclick="editCeo(${item.id})">Edit</button>
+                    ${role === "admin" ? `<button class="action-btn danger-btn" onclick="deleteCeo(${item.id})">Delete</button>` : ""}
+                </td>
+            </tr>
+        `).join("");
+    } catch(error) {
+        console.error(error);
+    }
+}
+
+async function loadFraudCases(){
+    if(!access[role]?.includes("fraud"))return;
+    const body = document.getElementById("fraudBody");
+    if(!body)return;
+    try {
+        const response = await fetch("http://localhost:5000/api/data/fraud-cases", {
+            headers: apiHeaders
+        });
+        if(!response.ok) return;
+        const data = await response.json();
+        window.fraudCache = data;
+        body.innerHTML = data.map(item => `
+            <tr>
+                <td>${item.case_id}</td>
+                <td>${item.fraud_typology}</td>
+                <td>${item.channel}</td>
+                <td>${item.amount_at_risk}</td>
+                <td>${item.signal_pattern}</td>
+                <td><span class="score">${item.risk_score}</span></td>
+                <td><span class="badge ${item.risk_indicator.toLowerCase() === 'red' ? 'red-b' : item.risk_indicator.toLowerCase() === 'amber' ? 'amber-b' : 'yellow-b'}">${item.risk_indicator}</span></td>
+                <td>${item.fraud_action}</td>
+                <td>
+                    <button class="action-btn muted-btn" onclick="editFraud(${item.id})">Edit</button>
+                    ${role === "admin" ? `<button class="action-btn danger-btn" onclick="deleteFraud(${item.id})">Delete</button>` : ""}
+                </td>
+            </tr>
+        `).join("");
+    } catch(error) {
+        console.error(error);
+    }
+}
+
+async function loadCollectionsCases(){
+    if(!access[role]?.includes("collections"))return;
+    const body = document.getElementById("collectionsBody");
+    if(!body)return;
+    try {
+        const response = await fetch("http://localhost:5000/api/data/collections-cases", {
+            headers: apiHeaders
+        });
+        if(!response.ok) return;
+        const data = await response.json();
+        window.collectionsCache = data;
+        body.innerHTML = data.map(item => `
+            <tr>
+                <td>${item.customer_id}</td>
+                <td>${item.product}</td>
+                <td>${item.outstanding}</td>
+                <td>${item.dpd_bucket}</td>
+                <td><span class="score">${item.recovery_score}</span></td>
+                <td>${item.last_contact}</td>
+                <td>${item.ptp_status}</td>
+                <td><span class="badge ${item.risk.toLowerCase() === 'red' ? 'red-b' : item.risk.toLowerCase() === 'yellow' ? 'yellow-b' : item.risk.toLowerCase() === 'amber' ? 'amber-b' : 'green-b'}">${item.risk}</span></td>
+                <td>${item.treatment}</td>
+                <td>
+                    <button class="action-btn muted-btn" onclick="editCollections(${item.id})">Edit</button>
+                    ${role === "admin" ? `<button class="action-btn danger-btn" onclick="deleteCollections(${item.id})">Delete</button>` : ""}
+                </td>
+            </tr>
+        `).join("");
+    } catch(error) {
+        console.error(error);
+    }
+}
+
+async function loadTreasuryPositions(){
+    if(!access[role]?.includes("treasury"))return;
+    const body = document.getElementById("treasuryBody");
+    if(!body)return;
+    try {
+        const response = await fetch("http://localhost:5000/api/data/treasury-positions", {
+            headers: apiHeaders
+        });
+        if(!response.ok) return;
+        const data = await response.json();
+        window.treasuryCache = data;
+        body.innerHTML = data.map(item => `
+            <tr>
+                <td>${item.treasury_position}</td>
+                <td>${item.exposure}</td>
+                <td>${item.position_limit}</td>
+                <td>
+                    <div class="progress ${item.risk.toLowerCase() === 'green' ? 'green' : item.risk.toLowerCase() === 'yellow' ? 'yellow' : 'amber'}">
+                        <div style="width:${item.utilisation_percent}%"></div>
+                    </div>
+                </td>
+                <td>${item.market_signal}</td>
+                <td><span class="score">${item.risk_score}</span></td>
+                <td><span class="badge ${item.risk.toLowerCase() === 'green' ? 'green-b' : item.risk.toLowerCase() === 'yellow' ? 'yellow-b' : 'amber-b'}">${item.risk}</span></td>
+                <td>${item.recommended_action}</td>
+                <td>
+                    <button class="action-btn muted-btn" onclick="editTreasury(${item.id})">Edit</button>
+                    ${role === "admin" ? `<button class="action-btn danger-btn" onclick="deleteTreasury(${item.id})">Delete</button>` : ""}
+                </td>
+            </tr>
+        `).join("");
+    } catch(error) {
+        console.error(error);
+    }
+}
+
+function editCrm(id){
+    const item = (window.crmCache || []).find(entry => Number(entry.id) === Number(id));
+    if(!item)return;
+    document.getElementById("crmId").value = item.id;
+    document.getElementById("crmName").value = item.customer_name;
+    document.getElementById("crmAge").value = item.age;
+    document.getElementById("crmCity").value = item.city;
+    document.getElementById("crmSegment").value = item.segment;
+    document.getElementById("crmBalance").value = item.account_balance;
+    document.getElementById("crmMode").textContent = `Editing customer ${item.id}`;
+}
+
+function editLoan(id){
+    const item = (window.loanCache || []).find(entry => Number(entry.id) === Number(id));
+    if(!item)return;
+    document.getElementById("loanId").value = item.id;
+    document.getElementById("loanCustomerId").value = item.customer_id;
+    document.getElementById("loanAmount").value = item.loan_amount;
+    document.getElementById("loanType").value = item.loan_type;
+    document.getElementById("loanRiskGrade").value = item.risk_grade;
+    document.getElementById("loanStatus").value = item.loan_status;
+    document.getElementById("loanMode").textContent = `Editing loan ${item.id}`;
+}
+
+function editCeo(id){
+    const item = (window.ceoCache || []).find(entry => Number(entry.id) === Number(id));
+    if(!item)return;
+    document.getElementById("ceoId").value = item.id;
+    document.getElementById("ceoSegmentName").value = item.segment_name;
+    document.getElementById("ceoRevenue").value = item.revenue;
+    document.getElementById("ceoPortfolioSize").value = item.portfolio_size;
+    document.getElementById("ceoRiskScore").value = item.risk_score;
+    document.getElementById("ceoRiskIndicator").value = item.risk_indicator;
+    document.getElementById("ceoFraudExposure").value = item.fraud_exposure;
+    document.getElementById("ceoManagementSignal").value = item.management_signal;
+    document.getElementById("ceoOwner").value = item.owner;
+    document.getElementById("ceoMode").textContent = `Editing segment ${item.id}`;
+}
+
+function editFraud(id){
+    const item = (window.fraudCache || []).find(entry => Number(entry.id) === Number(id));
+    if(!item)return;
+    document.getElementById("fraudId").value = item.id;
+    document.getElementById("fraudCaseId").value = item.case_id;
+    document.getElementById("fraudTypology").value = item.fraud_typology;
+    document.getElementById("fraudChannel").value = item.channel;
+    document.getElementById("fraudAmountAtRisk").value = item.amount_at_risk;
+    document.getElementById("fraudSignalPattern").value = item.signal_pattern;
+    document.getElementById("fraudRiskScore").value = item.risk_score;
+    document.getElementById("fraudRiskIndicator").value = item.risk_indicator;
+    document.getElementById("fraudAction").value = item.fraud_action;
+    document.getElementById("fraudMode").textContent = `Editing case ${item.id}`;
+}
+
+function editCollections(id){
+    const item = (window.collectionsCache || []).find(entry => Number(entry.id) === Number(id));
+    if(!item)return;
+    document.getElementById("collectionsId").value = item.id;
+    document.getElementById("collectionsCustomerId").value = item.customer_id;
+    document.getElementById("collectionsProduct").value = item.product;
+    document.getElementById("collectionsOutstanding").value = item.outstanding;
+    document.getElementById("collectionsDpdBucket").value = item.dpd_bucket;
+    document.getElementById("collectionsRecoveryScore").value = item.recovery_score;
+    document.getElementById("collectionsLastContact").value = item.last_contact;
+    document.getElementById("collectionsPtpStatus").value = item.ptp_status;
+    document.getElementById("collectionsRisk").value = item.risk;
+    document.getElementById("collectionsTreatment").value = item.treatment;
+    document.getElementById("collectionsMode").textContent = `Editing case ${item.id}`;
+}
+
+function editTreasury(id){
+    const item = (window.treasuryCache || []).find(entry => Number(entry.id) === Number(id));
+    if(!item)return;
+    document.getElementById("treasuryId").value = item.id;
+    document.getElementById("treasuryPosition").value = item.treasury_position;
+    document.getElementById("treasuryExposure").value = item.exposure;
+    document.getElementById("treasuryLimit").value = item.position_limit;
+    document.getElementById("treasuryUtilisationPercent").value = item.utilisation_percent;
+    document.getElementById("treasuryMarketSignal").value = item.market_signal;
+    document.getElementById("treasuryRiskScore").value = item.risk_score;
+    document.getElementById("treasuryRisk").value = item.risk;
+    document.getElementById("treasuryRecommendedAction").value = item.recommended_action;
+    document.getElementById("treasuryMode").textContent = `Editing position ${item.id}`;
+}
+
+async function deleteCrm(id){
+    if(!confirm("Delete this customer?"))return;
+    const response = await fetch(`http://localhost:5000/api/data/customers/${id}`, {
+        method: "DELETE",
+        headers: apiHeaders
+    });
+    const data = await response.json();
+    alert(data.message || "Deleted");
+    loadCustomers();
+}
+
+async function deleteLoan(id){
+    if(!confirm("Delete this loan?"))return;
+    const response = await fetch(`http://localhost:5000/api/data/loans/${id}`, {
+        method: "DELETE",
+        headers: apiHeaders
+    });
+    const data = await response.json();
+    alert(data.message || "Deleted");
+    loadLoans();
+}
+
+async function deleteCeo(id){
+    if(!confirm("Delete this business segment?"))return;
+    const response = await fetch(`http://localhost:5000/api/data/ceo-segments/${id}`, {
+        method: "DELETE",
+        headers: apiHeaders
+    });
+    const data = await response.json();
+    alert(data.message || "Deleted");
+    loadCeoSegments();
+}
+
+async function deleteFraud(id){
+    if(!confirm("Delete this fraud case?"))return;
+    const response = await fetch(`http://localhost:5000/api/data/fraud-cases/${id}`, {
+        method: "DELETE",
+        headers: apiHeaders
+    });
+    const data = await response.json();
+    alert(data.message || "Deleted");
+    loadFraudCases();
+}
+
+async function deleteCollections(id){
+    if(!confirm("Delete this collections case?"))return;
+    const response = await fetch(`http://localhost:5000/api/data/collections-cases/${id}`, {
+        method: "DELETE",
+        headers: apiHeaders
+    });
+    const data = await response.json();
+    alert(data.message || "Deleted");
+    loadCollectionsCases();
+}
+
+async function deleteTreasury(id){
+    if(!confirm("Delete this treasury position?"))return;
+    const response = await fetch(`http://localhost:5000/api/data/treasury-positions/${id}`, {
+        method: "DELETE",
+        headers: apiHeaders
+    });
+    const data = await response.json();
+    alert(data.message || "Deleted");
+    loadTreasuryPositions();
+}
+
+document.getElementById("crmForm")?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const id = document.getElementById("crmId").value;
+    const payload = {
+        customer_name: document.getElementById("crmName").value.trim(),
+        age: document.getElementById("crmAge").value,
+        city: document.getElementById("crmCity").value.trim(),
+        segment: document.getElementById("crmSegment").value,
+        account_balance: document.getElementById("crmBalance").value
+    };
+    const response = await fetch(`http://localhost:5000/api/data/customers${id ? `/${id}` : ""}`, {
+        method: id ? "PUT" : "POST",
+        headers: apiHeaders,
+        body: JSON.stringify(payload)
+    });
+    const data = await response.json();
+    const messageEl = document.getElementById("crmMessage");
+    if(messageEl) messageEl.textContent = data.message || "Saved";
+    event.target.reset();
+    document.getElementById("crmId").value = "";
+    document.getElementById("crmMode").textContent = "New customer";
+    loadCustomers();
+});
+
+document.getElementById("loanForm")?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const id = document.getElementById("loanId").value;
+    const payload = {
+        customer_id: document.getElementById("loanCustomerId").value,
+        loan_amount: document.getElementById("loanAmount").value,
+        loan_type: document.getElementById("loanType").value.trim(),
+        risk_grade: document.getElementById("loanRiskGrade").value,
+        loan_status: document.getElementById("loanStatus").value
+    };
+    const response = await fetch(`http://localhost:5000/api/data/loans${id ? `/${id}` : ""}`, {
+        method: id ? "PUT" : "POST",
+        headers: apiHeaders,
+        body: JSON.stringify(payload)
+    });
+    const data = await response.json();
+    const messageEl = document.getElementById("loanMessage");
+    if(messageEl) messageEl.textContent = data.message || "Saved";
+    event.target.reset();
+    document.getElementById("loanId").value = "";
+    document.getElementById("loanMode").textContent = "New loan";
+    loadLoans();
+});
+
+document.getElementById("ceoForm")?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const id = document.getElementById("ceoId").value;
+    const payload = {
+        segment_name: document.getElementById("ceoSegmentName").value.trim(),
+        revenue: document.getElementById("ceoRevenue").value.trim(),
+        portfolio_size: document.getElementById("ceoPortfolioSize").value.trim(),
+        risk_score: document.getElementById("ceoRiskScore").value,
+        risk_indicator: document.getElementById("ceoRiskIndicator").value,
+        fraud_exposure: document.getElementById("ceoFraudExposure").value.trim(),
+        management_signal: document.getElementById("ceoManagementSignal").value.trim(),
+        owner: document.getElementById("ceoOwner").value.trim()
+    };
+    const response = await fetch(`http://localhost:5000/api/data/ceo-segments${id ? `/${id}` : ""}`, {
+        method: id ? "PUT" : "POST",
+        headers: apiHeaders,
+        body: JSON.stringify(payload)
+    });
+    const data = await response.json();
+    const messageEl = document.getElementById("ceoMessage");
+    if(messageEl) messageEl.textContent = data.message || "Saved";
+    event.target.reset();
+    document.getElementById("ceoId").value = "";
+    document.getElementById("ceoMode").textContent = "New segment";
+    loadCeoSegments();
+});
+
+document.getElementById("fraudForm")?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const id = document.getElementById("fraudId").value;
+    const payload = {
+        case_id: document.getElementById("fraudCaseId").value.trim(),
+        fraud_typology: document.getElementById("fraudTypology").value.trim(),
+        channel: document.getElementById("fraudChannel").value.trim(),
+        amount_at_risk: document.getElementById("fraudAmountAtRisk").value.trim(),
+        signal_pattern: document.getElementById("fraudSignalPattern").value.trim(),
+        risk_score: document.getElementById("fraudRiskScore").value,
+        risk_indicator: document.getElementById("fraudRiskIndicator").value,
+        fraud_action: document.getElementById("fraudAction").value.trim()
+    };
+    const response = await fetch(`http://localhost:5000/api/data/fraud-cases${id ? `/${id}` : ""}`, {
+        method: id ? "PUT" : "POST",
+        headers: apiHeaders,
+        body: JSON.stringify(payload)
+    });
+    const data = await response.json();
+    const messageEl = document.getElementById("fraudMessage");
+    if(messageEl) messageEl.textContent = data.message || "Saved";
+    event.target.reset();
+    document.getElementById("fraudId").value = "";
+    document.getElementById("fraudMode").textContent = "New case";
+    loadFraudCases();
+});
+
+document.getElementById("collectionsForm")?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const id = document.getElementById("collectionsId").value;
+    const payload = {
+        customer_id: document.getElementById("collectionsCustomerId").value.trim(),
+        product: document.getElementById("collectionsProduct").value.trim(),
+        outstanding: document.getElementById("collectionsOutstanding").value.trim(),
+        dpd_bucket: document.getElementById("collectionsDpdBucket").value.trim(),
+        recovery_score: document.getElementById("collectionsRecoveryScore").value,
+        last_contact: document.getElementById("collectionsLastContact").value.trim(),
+        ptp_status: document.getElementById("collectionsPtpStatus").value.trim(),
+        risk: document.getElementById("collectionsRisk").value,
+        treatment: document.getElementById("collectionsTreatment").value.trim()
+    };
+    const response = await fetch(`http://localhost:5000/api/data/collections-cases${id ? `/${id}` : ""}`, {
+        method: id ? "PUT" : "POST",
+        headers: apiHeaders,
+        body: JSON.stringify(payload)
+    });
+    const data = await response.json();
+    const messageEl = document.getElementById("collectionsMessage");
+    if(messageEl) messageEl.textContent = data.message || "Saved";
+    event.target.reset();
+    document.getElementById("collectionsId").value = "";
+    document.getElementById("collectionsMode").textContent = "New case";
+    loadCollectionsCases();
+});
+
+document.getElementById("treasuryForm")?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const id = document.getElementById("treasuryId").value;
+    const payload = {
+        treasury_position: document.getElementById("treasuryPosition").value.trim(),
+        exposure: document.getElementById("treasuryExposure").value.trim(),
+        position_limit: document.getElementById("treasuryLimit").value.trim(),
+        utilisation_percent: document.getElementById("treasuryUtilisationPercent").value,
+        market_signal: document.getElementById("treasuryMarketSignal").value.trim(),
+        risk_score: document.getElementById("treasuryRiskScore").value,
+        risk: document.getElementById("treasuryRisk").value,
+        recommended_action: document.getElementById("treasuryRecommendedAction").value.trim()
+    };
+    const response = await fetch(`http://localhost:5000/api/data/treasury-positions${id ? `/${id}` : ""}`, {
+        method: id ? "PUT" : "POST",
+        headers: apiHeaders,
+        body: JSON.stringify(payload)
+    });
+    const data = await response.json();
+    const messageEl = document.getElementById("treasuryMessage");
+    if(messageEl) messageEl.textContent = data.message || "Saved";
+    event.target.reset();
+    document.getElementById("treasuryId").value = "";
+    document.getElementById("treasuryMode").textContent = "New position";
+    loadTreasuryPositions();
+});
+
+document.getElementById("crmFilterBtn")?.addEventListener("click", loadCustomers);
+document.getElementById("crmResetBtn")?.addEventListener("click", () => {
+    const searchInput = document.getElementById("crmSearch");
+    const segmentFilter = document.getElementById("crmSegmentFilter");
+    if(searchInput) searchInput.value = "";
+    if(segmentFilter) segmentFilter.value = "";
+    loadCustomers();
+});
+
+document.getElementById("loanFilterBtn")?.addEventListener("click", loadLoans);
+document.getElementById("loanResetBtn")?.addEventListener("click", () => {
+    const searchInput = document.getElementById("loanSearch");
+    const statusFilter = document.getElementById("loanStatusFilter");
+    const riskFilter = document.getElementById("loanRiskFilter");
+    if(searchInput) searchInput.value = "";
+    if(statusFilter) statusFilter.value = "";
+    if(riskFilter) riskFilter.value = "";
+    loadLoans();
+});
+
 loadMetrics();
 loadCases();
 loadUsers();
+loadCustomers();
+loadLoans();
+loadCeoSegments();
+loadFraudCases();
+loadCollectionsCases();
+loadTreasuryPositions();
 setInterval(loadMetrics,15000);
 </script>
 </body>
