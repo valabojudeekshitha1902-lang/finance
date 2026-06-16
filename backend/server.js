@@ -9,6 +9,7 @@ const authRoutes = require("./routes/authRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const casesRoutes = require("./routes/casesRoutes");
 const metricsRoutes = require("./routes/metricsRoutes");
+const customersLoansRoutes = require("./routes/customersLoansRoutes");
 
 const app = express();
 
@@ -18,17 +19,12 @@ app.use(express.json());
 
 // Routes
 app.use("/api/auth", authRoutes);
-const dashboardRoutes =
-require("./routes/dashboardRoutes");
+const dashboardRoutes = require("./routes/dashboardRoutes");
 app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/metrics", metricsRoutes);
 app.use("/api/cases", casesRoutes);
 app.use("/api/admin", adminRoutes);
-
-// Home Route
-app.get("/", (req, res) => {
-  res.send("BankOps AI Backend Running");
-});
+app.use("/api/data", customersLoansRoutes);
 
 // Temporary Registration Test Route
 app.get("/register-test", async (req, res) => {
